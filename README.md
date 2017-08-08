@@ -7,6 +7,7 @@ Render Tweets on Google Maps by location with the marker encoded with colors rep
 2. The worker pool has multiple workers (max workers: 4) that fetches incoming records from kafka, performs sentimental analysis on the same and then notifies the http endpoint using SNS.
 3. Finally the server.js file subscribes to the records being sent via SNS, and stores the same in Elastic Search, which is then populated in a google map.
 4. Also, the markers in the google map correspond to the type of sentiment being projected by the tweets. Like Green for positive, orange for negative and yellow for neutral tweets.
+5. All of this was finally deployed in AWS Elastic Beanstalk for scalability.
 
 Reference:
 1. https://www.npmjs.com/package/kafka-node
